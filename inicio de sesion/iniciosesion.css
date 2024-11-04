@@ -1,0 +1,130 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid #ccc;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.logo img {
+    height: 170px;
+    width: 170px;
+}
+
+/* Perfil y carrito */
+.cart-profile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.cart-profile img {
+    height: 60px;
+    margin-left: 40px;
+}
+
+main {
+    padding: 20px;
+    margin: 40px 0; /* Espacio adicional entre el main y el header */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 2px solid #ccc; /* Borde del recuadro */
+    border-radius: 8px; /* Bordes redondeados del recuadro */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el recuadro */
+    margin-bottom: 40px; /* Espacio adicional entre el formulario y la sección de contacto */
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Sección de contacto */
+.contact {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* Aumenta el espacio entre las gorras y la barra de contacto */
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.contact-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.1);
+}

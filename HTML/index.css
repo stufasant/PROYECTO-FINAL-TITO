@@ -1,0 +1,228 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.logo img {
+    height: 170px;
+    width: 170px;
+}
+
+/* Lupa de búsqueda */
+.search-icon {
+    position: absolute;
+    top: 20px;
+    right: 500px;
+    cursor: pointer;
+}
+
+.search-icon img {
+    height: 40px;
+    width: 40px;
+}
+
+/* Barra de búsqueda siempre visible */
+.search-bar {
+    position: absolute;
+    top: 15px;
+    right: 180px;
+    width: 300px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+/* Perfil y carrito */
+.cart-profile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cart-profile img {
+    height: 60px;
+    margin-left: 40px;
+}
+
+
+
+
+main {
+    padding: 20px;
+}
+
+.featured-model {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.model-img img {
+    width: 100%;
+    height: auto;
+    border: 2px solid rgb(245, 222, 222);
+}
+
+.new-hats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.hat-section {
+    text-align: center;
+    position: relative;
+}
+
+.hat-header {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hat-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hat-button:hover {
+    background-color: #ffffff;
+}
+
+.hat-image {
+    width: 300px;
+    height: 300px;
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+.all-hats {
+    margin-top: 80px;
+    text-align: left;
+}
+
+.hats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.hat-item {
+    text-align: left;
+}
+
+.hat-item img {
+    width: 230px;
+    height: 230px;
+    border: 2px solid rgb(212, 193, 193);
+}
+
+.product p {
+    font-size: 19px;
+    margin-top: 0px;
+}
+
+/* Sección de contacto con mayor margen superior */
+.contact {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* Aumenta el espacio entre las gorras y la barra de contacto */
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.contact-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.1);
+}
+
+
+

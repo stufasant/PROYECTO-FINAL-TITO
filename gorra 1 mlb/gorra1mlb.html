@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Gorras MLB</title>
+    <link rel="stylesheet" href="gorra1mlb.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estructura principal usando grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        /* Flecha de regreso */
+        .back-arrow {
+            display: block;
+            margin: 20px 0 40px 10px; /* Ajuste de margen superior e inferior */
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .back-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        /* Carrusel a la izquierda */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: auto;
+            display: none;
+            border: 2px solid rgb(228, 210, 210);
+        }
+
+        .carousel-img.active {
+            display: block;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .thumbnail-container img {
+            width: 50px;
+            height: auto;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        /* Información del producto a la derecha */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-info h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .product-info p {
+            font-size: 22px;
+            color: #e20000;
+            font-weight: bold;
+        }
+
+        .availability {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #000000;
+        }
+
+        .talle-info {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        /* Botones de acción */
+        .product-actions {
+            margin-top: 20px;
+        }
+
+        .product-actions label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .product-actions select {
+            padding: 5px;
+        }
+
+        .product-actions button {
+            padding: 12px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .product-actions button:hover {
+            background-color: #555;
+        }
+
+        /* Estilos para el input de cantidad */
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .quantity-container button {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quantity-container input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+            margin: 0 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+
+        /* Estilos para la sección de contacto */
+        .contact {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 5px;
+        }
+
+        .contact h2 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            color: #ffffff;
+        }
+
+        .contact-icons {
+            margin-top: 10px;
+        }
+
+        .contact-icons a {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../HTML/index.html">
+                    <img src="../assets/LOGO EMPRESA.png" alt="Logo Gorra">
+                </a>
+            </div>
+
+
+            <div class="cart-profile">
+                <a href="../error404.html">
+                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
+                </a>
+                <a href="../inicio de sesion/iniciosesion.html">
+                    <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="carousel">
+                <img src="../assets/gorra 1 mlb.png" alt="Modelo 1" class="carousel-img active">
+                <img src="../assets/YANKEES 2.png" alt="Modelo 3" class="carousel-img">
+
+                <div class="thumbnail-container">
+                    <img src="../assets/gorra 1 mlb.png" alt="Miniatura 1" class="thumbnail">
+                    <img src="../assets/YANKEES 2.png" alt="Miniatura 3" class="thumbnail">
+                </div>
+            </div>
+            <div class="product-info">
+                <h2>Gorra 59 fifty NY Yankees</h2>
+                <p>$59.999</p>
+                <p class="availability">Disponibilidad: En stock</p>
+                <p class="talle-info"> Ver tabla de talles</p>
+
+                <div class="product-actions">
+                    <label for="talla">Talle:</label>
+                    <select id="talla">
+                        <option value="7 1/8">7 1/8</option>
+                        <option value="7 5/8">7 5/8</option>
+                        <option value="7 3/8">7 3/8</option>
+                    </select>
+
+                    <div class="quantity-container">
+                        <button id="decrease-quantity">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button id="increase-quantity">+</button>
+                    </div>
+                    <button id="buy-now-btn">Comprar ahora</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de contacto -->
+        <section class="contact">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> sturfeighengorras@gmail.com</p>
+                <p><strong>Dirección:</strong> Simonovich 3350</p>
+                <p><strong>Horario:</strong> Lunes a Sábado 10:00 a 21:00 hs</p>
+                <p><strong>Teléfono:</strong> +54 260 401 0214</p>
+            </div>
+            <div class="contact-icons">
+                <a href="https://wa.me/542604010214" target="_blank">
+                    <img src="../assets/wsp.png" alt="WhatsApp" width="40">
+                </a>
+                <a href="https://www.instagram.com/santiagosturr/?next=%2Fstuufaa%2F" target="_blank">
+                    <img src="../assets/instagram.png" alt="Instagram" width="40">
+                </a>
+            </div>
+        </section>
+    </main>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel-img');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const totalImages = images.length;
+
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = index;
+                    images[currentIndex].classList.add('active');
+                });
+            });
+
+            document.getElementById('increase-quantity').addEventListener('click', function () {
+                let quantity = document.getElementById('quantity');
+                quantity.value = parseInt(quantity.value) + 1;
+            });
+
+            document.getElementById('decrease-quantity').addEventListener('click', function () {
+                let quantity = document.getElementById('quantity');
+                if (quantity.value > 1) {
+                    quantity.value = parseInt(quantity.value) - 1;
+                }
+            });
+
+            // Redirige a WhatsApp con un mensaje personalizado al hacer clic en "Comprar ahora"
+            document.getElementById('buy-now-btn').addEventListener('click', function () {
+                const talle = document.getElementById('talla').value;
+                const quantity = document.getElementById('quantity').value;
+                const productName = "Gorra 59 fifty NY Yankees";
+                const price = "$59.999";
+
+                // Crear mensaje personalizado
+                const message = `Hola Tec caps! Quiero realizar un pedido:
+- Producto: ${productName}
+- Talle: ${talle}
+- Cantidad: ${quantity}
+- Precio unitario: ${price}`;
+
+                // Redirige a WhatsApp con el mensaje
+                const phoneNumber = "542604010214";
+                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+            });
+        });
+    </script>
+</body>
+</html>

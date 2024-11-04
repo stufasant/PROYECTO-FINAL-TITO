@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Gorras NBA</title>
+    <link rel="stylesheet" href="vermamlb.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../HTML/index.html">
+                    <img src="../assets/LOGO EMPRESA.png" alt="Logo Gorra">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form id="search-form">
+                    <select id="team" name="team">
+                        <option value="">Seleccionar equipo</option>
+                        <option value="NY mets">NY mets</option>
+                        <option value="NY Yankees">NY Yankees</option>
+                        <option value="Atlanta braves">Atlanta braves</option>
+                        <option value="LA dodgers">LA dodgers</option>
+                        <option value="Oakland athletics">Oakland athletics</option>
+                    </select>
+
+                    <select id="cap-type" name="cap-type">
+                        <option value="">Seleccionar tipo de gorra</option>
+                        <option value="59fifty">59Fifty</option>
+                        <option value="9fifty">9Fifty</option>
+                        <option value="regulables">Regulables</option>
+                    </select>
+
+                    <select id="price" name="price">
+                        <option value="">Seleccionar precio</option>
+                        <option value="55k-mas">Más de $55.000</option>
+                        <option value="55k-menos">Menos de $55.000</option>
+                    </select>
+
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="cart-profile">
+                <a href="../error404.html">
+                    <img src="../assets/CARRITO 2.0.png" alt="Carrito" width="30">
+                </a>
+                <a href="../inicio de sesion/iniciosesion.html">
+                    <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil" width="30">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products" id="mlbProducts">
+            <div class="product static" data-team="NY Yankees" data-type="59fifty" data-price="59999">
+                <a href="../gorra 1 mlb/gorra1mlb.html">
+                    <img src="../assets/gorra 1 mlb.png" alt="Gorra NBA 1">
+                </a>
+                <p>GORRA 59 fifty NY Yankees<br>$59.999</p>
+            </div>
+            <div class="product static" data-team="Oakland athletics" data-type="59fifty" data-price="59999">
+                <a href="../gorra 2 mlb/gorra2mlb.html">
+                    <img src="../assets/gorra 2 mlb.png" alt="Gorra NBA 2">
+                </a>
+                <p>Gorra 59fifty Oakland athletics<br>$59.999</p>
+            </div>
+            <div class="product static" data-team="LA dodgers" data-type="9fifty" data-price="49999">
+                <a href="../gorra 3 mlb/gorra 3mlb.html">
+                    <img src="../assets/gorra 3 mlb.png" alt="Gorra NBA 3">
+                </a>
+                <p>Gorra 9fifty LA dodgers <br>$49.999</p>
+            </div>
+            <div class="product static" data-team="NY Yankees" data-type="39fifty" data-price="49999">
+                <a href="../gorra 4 mlb/gorra4mlb.html">
+                    <img src="../assets/gorra 4 mlb.png" alt="Gorra NBA 4">
+                </a>
+                <p>Gorra 39fifty NY Yankees<br>$49.999</p>
+            </div>
+
+            <!-- Segunda fila de productos -->
+            <div class="product static" data-team="NY mets" data-type="regulables" data-price="35999">
+                <a href="../gorra 5 mlb/gorra 5 mlb.html">
+                    <img src="../assets/gorra 5 mlb.png" alt="Gorra NBA 5">
+                </a>
+                <p>Gorra NY mets recta regulable 21/22<br>$35.999</p>
+            </div>
+            <div class="product static" data-team="Atlanta braves" data-type="9fifty" data-price="48999">
+                <a href="../gorra 6 mlb/gorra6mlb.html">
+                    <img src="../assets/gorra 6 mlb.png" alt="Gorra NBA 6">
+                </a>
+                <p>Gorra 9fifty Atlanta braves<br>$48.999</p>
+            </div>
+        </section>
+
+        <!-- Imagen de flecha interactiva para Ver Más -->
+        <section class="more-arrow">
+            <a href="../HTML/index.html">
+                <img src="../assets/flecha.png" alt="Ver más" width="40">
+            </a>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section class="contact">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> sturfeighengorras@gmail.com</p>
+                <p><strong>Dirección:</strong> Simonovich 3350</p>
+                <p><strong>Horario:</strong> Lunes a Sábado 10:00 a 21:00 hs</p>
+                <p><strong>Teléfono:</strong> +54 260 401 0214</p>
+            </div>
+            <div class="contact-icons">
+                <a href="https://wa.me/542604010214" target="_blank">
+                    <img src="../assets/wsp.png" alt="WhatsApp" width="40">
+                </a>
+                <a href="https://www.instagram.com/santiagosturr/?next=%2Fstuufaa%2F" target="_blank">
+                    <img src="../assets/instagram.png" alt="Instagram" width="40">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Cargar productos de MLB desde localStorage
+        document.addEventListener("DOMContentLoaded", () => {
+            const mlbProducts = JSON.parse(localStorage.getItem("MLB")) || [];
+            const productContainer = document.getElementById("mlbProducts");
+
+            // Mostrar solo los productos estáticos
+            const staticProducts = document.querySelectorAll('.product.static');
+
+            // Crear productos dinámicos solo si hay elementos en el localStorage
+            if (mlbProducts.length > 0) {
+                mlbProducts.forEach(product => {
+                    const productElement = document.createElement("div");
+                    productElement.classList.add("product");
+                    productElement.setAttribute("data-team", product.team);
+                    productElement.setAttribute("data-type", product.type);
+                    productElement.setAttribute("data-price", product.price);
+                    productElement.innerHTML = `
+                        <img src="${product.imageUrl}" alt="${product.team}">
+                        <p>${product.type} ${product.team} <br>$${product.price}</p>
+                    `;
+                    productContainer.appendChild(productElement);
+                });
+            }
+
+            // Ocultar los productos dinámicos
+            const dynamicProducts = document.querySelectorAll('.product:not(.static)');
+            dynamicProducts.forEach(product => {
+                product.style.display = 'none';
+            });
+        });
+
+        // Funcionalidad de búsqueda
+        document.getElementById('search-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita el envío del formulario
+            const selectedTeam = document.getElementById('team').value;
+            const selectedType = document.getElementById('cap-type').value;
+            const selectedPrice = document.getElementById('price').value;
+
+            const products = document.querySelectorAll('.product.static'); // Solo productos estáticos
+
+            products.forEach(product => {
+                const team = product.getAttribute('data-team');
+                const type = product.getAttribute('data-type');
+                const price = parseInt(product.getAttribute('data-price'));
+
+                let isVisible = true;
+
+                if (selectedTeam && team !== selectedTeam) {
+                    isVisible = false;
+                }
+                if (selectedType && type !== selectedType) {
+                    isVisible = false;
+                }
+                if (selectedPrice === '55k-mas' && price <= 55000) {
+                    isVisible = false;
+                }
+                if (selectedPrice === '55k-menos' && price > 55000) {
+                    isVisible = false;
+                }
+
+                product.style.display = isVisible ? 'block' : 'none'; // Muestra u oculta el producto
+            });
+        });
+    </script>
+</body>
+</html>

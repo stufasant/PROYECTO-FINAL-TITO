@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Gorras NBA</title>
+    <link rel="stylesheet" href="iniciosesion.css">
+    <style>
+        /* Estilos para el carrusel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: auto;
+            display: none; /* Ocultar por defecto */
+            border: 2px solid rgb(228, 210, 210);
+        }
+
+        .carousel-img.active {
+            display: block; /* Mostrar imagen activa */
+        }
+
+        /* Estilos para el texto de envío gratis */
+        .shipping-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            z-index: 10; /* Asegura que esté por encima de otros elementos */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+           
+                <div class="logo">
+                    <a href="../HTML/index.html">
+                        <img src="../assets/LOGO EMPRESA.png" alt="Logo Gorra">
+            </div>
+
+            </div>
+
+            <div class="cart-profile">
+                <a href="../error404.html">
+                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
+                </a>
+                <a href="../perfil/index.html">
+                    <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <main>
+            <div class="login-container">
+                <h2>Inicio de Sesión</h2>
+                <input type="text" id="username" placeholder="Usuario">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button onclick="login()">Ingresar</button>
+            </div>
+        </main>
+    
+        <!-- Sección de contacto -->
+        <section class="contact">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> sturfeighengorras@gmail.com</p>
+                <p><strong>Dirección:</strong> Simonovich 3350</p>
+                <p><strong>Horario:</strong> Lunes a Sábado 10:00 a 21:00 hs</p>
+                <p><strong>Teléfono:</strong> +54 260 401 0214</p>
+            </div>
+            <div class="contact-icons">
+                <a href="https://wa.me/542604010214" target="_blank">
+                    <img src="../assets/wsp.png" alt="WhatsApp" width="40">
+                </a>
+                <a href="https://www.instagram.com/santiagosturr/?next=%2Fstuufaa%2F" target="_blank">
+                    <img src="../assets/instagram.png" alt="Instagram" width="40">
+                </a>
+            </div>
+        </section>
+    
+        <script>
+            // Función de inicio de sesión
+            function login() {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+        
+                const users = {
+                    "invitado": "invitado123",
+                    "admin": "admin123"
+                };
+        
+                if (username in users && password === users[username]) {
+                    if (username === "admin") {
+                        alert("Bienvenido, Admin!");
+                        window.location.href = "../admin.html/admin.html"; // Redirige al panel de administrador
+                    } else if (username === "invitado") {
+                        alert("Bienvenido, Invitado!");
+                        window.location.href = "../HTML/index.html";
+                    }
+                } else {
+                    alert("Usuario o contraseña incorrectos.");
+                }
+            }
+        </script>
+        
+    </body>
+    </html>

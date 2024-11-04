@@ -1,0 +1,162 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Cambiado a Open Sans */
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 4px;
+    background-color: white; /* Color de las barras del menú cambiado a blanco */
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.logo img {
+    height: 170px;
+    width: 170px;
+}
+
+/* Lupa de búsqueda */
+.search-icon {
+    position: absolute;
+    top: 20px; /* Ajuste de posición */
+    right: 500px; /* Ajuste de posición */
+    cursor: pointer;
+}
+
+.search-icon img {
+    height: 40px;
+    width: 40px;
+}
+
+/* Barra de búsqueda siempre visible */
+.search-bar {
+    position: absolute;
+    top: 15px; /* Ajuste de posición */
+    right: 180px; /* Ajuste de posición */
+    width: 300px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px; /* Tamaño de fuente ajustado */
+}
+
+/* Perfil y carrito */
+.cart-profile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cart-profile img {
+    height: 60px;   /* Aumentado el tamaño a 60px */
+    width: 60px;    /* Aumentado el ancho a 60px */
+    margin-left: 40px; /* Espacio entre los íconos */
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 productos por fila */
+    gap: 20px; /* Espacio entre los productos */
+    justify-items: center;
+}
+
+.product {
+    width: 220px; /* Aumenta el ancho del contenedor del producto */
+    text-align: center;
+}
+
+.product img {
+    width: 300px; /* Aumenta el ancho de la imagen */
+    height: 300px; /* Aumenta la altura de la imagen */
+    border: 2px solid rgb(231, 223, 223); /* Color ajustado */
+}
+
+.product p {
+    font-size: 16px; /* Aumenta el tamaño de la fuente para mayor legibilidad */
+    margin-top: 5px;
+}
+
+
+
+/* Estilos para la sección de contacto */
+.contact {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.contact-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.1);
+}

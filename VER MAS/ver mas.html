@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Gorras NBA</title>
+    <link rel="stylesheet" href="VERMAS.CSS">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <a href="../HTML/index.html"> <!-- Enlace al logo -->
+                    <img src="../assets/LOGO EMPRESA.png" alt="Logo Gorra">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form id="search-form">
+                    <select id="team" name="team">
+                        <option value="">Seleccionar equipo</option>
+                        <option value="indiana-pacers">Indiana Pacers</option>
+                        <option value="denver-nuggets">Denver Nuggets</option>
+                        <option value="charlotte-hornets">Charlotte Hornets</option>
+                        <option value="miami-heat">Miami Heat</option>
+                        <option value="los-angeles-lakers">Los Angeles Lakers</option>
+                        <option value="san-antonio-spurs">San Antonio Spurs</option>
+                        <option value="chicago-bulls">Chicago Bulls</option>
+                        <option value="nba-all-stars">NBA All Stars Team</option>
+                    </select>
+
+                    <select id="cap-type" name="cap-type">
+                        <option value="">Seleccionar tipo de gorra</option>
+                        <option value="59fifty">59Fifty</option>
+                        <option value="9fifty">9Fifty</option>
+                        <option value="regulables">Regulables</option>
+                    </select>
+
+                    <select id="price" name="price">
+                        <option value="">Seleccionar precio</option>
+                        <option value="55k-mas">Más de $55.000</option>
+                        <option value="55k-menos">Menos de $55.000</option>
+                    </select>
+
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="cart-profile">
+                <a href="../error404.html"> <!-- Enlace al carrito -->
+                    <img src="../assets/CARRITO 2.0.png" alt="Carrito" width="30">
+                </a>
+                <a href="../inicio de sesion/iniciosesion.html"> <!-- Enlace a la foto de perfil -->
+                    <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil" width="30">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products">
+            <!-- Primera fila de productos -->
+            <div class="product" data-team="los-angeles-lakers" data-type="59fifty" data-price="59999">
+                <a href="../gorra1/gorra 1.html">
+                    <img src="../assets/gorra1.png" alt="Gorra NBA 1">
+                    <p>GORRA 59 fifty LA Lakers campeones<br>$59.999</p>
+                </a>
+            </div>
+            <div class="product" data-team="chicago-bulls" data-type="59fifty" data-price="59999">
+                <a href="../gorra 2 nba/gorra2nba.html">
+                    <img src="../assets/gorra2.png" alt="Gorra NBA 2">
+                    <p>Gorra 59 fifty Chicago Bulls<br>$59.999</p>
+                </a>
+            </div>
+            <div class="product" data-team="charlotte-hornets" data-type="59fifty" data-price="49999">
+                <a href="../gorra 3 nba/gorra3nba.html">
+                    <img src="../assets/gorra3.png" alt="Gorra NBA 3">
+                    <p>Gorra 59 fifty Charlotte Hornets<br>$49.999</p>
+                </a>
+            </div>
+            <div class="product" data-team="nba-all-stars" data-type="regulables" data-price="49999">
+                <a href="../gorra 4 nba/gorra4nba.html">
+                    <img src="../assets/GORRA 4 VER MAS.png" alt="Gorra NBA 4">
+                    <p>Gorra regulable logo NBA<br>$49.999</p>
+                </a>
+            </div>
+
+            <!-- Segunda fila de productos -->
+            <div class="product" data-team="san-antonio-spurs" data-type="regulables" data-price="35999">
+                <a href="../gorra 5 nba/gorra 5 nba.html">
+                    <img src="../assets/GORRA 5 VER MAS.png" alt="Gorra NBA 5">
+                    <p>Gorra regulable Spurs 23/24<br>$35.999</p>
+                </a>
+            </div>
+            <div class="product" data-team="denver-nuggets" data-type="9fifty" data-price="48999">
+                <a href="../gorra 6 nba/gorra6nba.html">
+                    <img src="../assets/GORRA 6 VER MAS.png" alt="Gorra NBA 6">
+                    <p>Gorra 9fifty Denver Nuggets<br>$48.999</p>
+                </a>
+            </div>
+            <div class="product" data-team="brooklyn-nets" data-type="9fifty" data-price="59999">
+                <a href="../gorra 7 nba/gorra7nba.html">
+                    <img src="../assets/gorra 7 ver mas.png" alt="Gorra NBA 7">
+                    <p>Gorra 9fifty Brooklyn Nets 21/22<br>$59.999</p>
+                </a>
+            </div>
+            <div class="product" data-team="indiana-pacers" data-type="regulables" data-price="89999">
+                <a href="../gorra 8 nba/gorra8nba.html">
+                    <img src="../assets/leal.png" alt="Gorra Indiana Pacers">
+                    <p>Gorra Indiana Pacers "Special Edition"<br>$89.999</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Imagen de flecha interactiva para Ver Más -->
+        <section class="more-arrow">
+            <a href="../HTML/index.html">
+                <img src="../assets/flecha.png" alt="Ver más" width="40">
+            </a>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section class="contact">
+            <h2>Contactanos</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> sturfeighengorras@gmail.com</p>
+                <p><strong>Dirección:</strong> Simonovich 3350</p>
+                <p><strong>Horario:</strong> Lunes a Sábado 10:00 a 21:00 hs</p>
+                <p><strong>Teléfono:</strong> +54 260 401 0214</p>
+            </div>
+            <div class="contact-icons">
+                <a href="https://wa.me/542604010214" target="_blank">
+                    <img src="../assets/wsp.png" alt="WhatsApp" width="40">
+                </a>
+                <a href="https://www.instagram.com/santiagosturr/?next=%2Fstuufaa%2F" target="_blank">
+                    <img src="../assets/instagram.png" alt="Instagram" width="40">
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Funcionalidad de búsqueda
+        document.getElementById('search-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita el envío del formulario
+            const selectedTeam = document.getElementById('team').value;
+            const selectedType = document.getElementById('cap-type').value;
+            const selectedPrice = document.getElementById('price').value;
+
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const team = product.getAttribute('data-team');
+                const type = product.getAttribute('data-type');
+                const price = parseInt(product.getAttribute('data-price'));
+
+                let isVisible = true;
+
+                if (selectedTeam && team !== selectedTeam) {
+                    isVisible = false;
+                }
+                if (selectedType && type !== selectedType) {
+                    isVisible = false;
+                }
+                if (selectedPrice === '55k-mas' && price <= 55000) {
+                    isVisible = false;
+                }
+                if (selectedPrice === '55k-menos' && price > 55000) {
+                    isVisible = false;
+                }
+
+                product.style.display = isVisible ? 'block' : 'none'; // Muestra u oculta el producto
+            });
+        });
+    </script>
+</body>
+</html>
