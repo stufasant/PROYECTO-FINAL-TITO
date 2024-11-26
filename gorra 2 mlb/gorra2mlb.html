@@ -180,6 +180,24 @@
         .contact-icons a {
             margin-right: 15px;
         }
+
+        /* Botón de WhatsApp flotante */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
     </style>
 </head>
 <body>
@@ -191,10 +209,8 @@
                 </a>
             </div>
 
+
             <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
-                </a>
                 <a href="../inicio de sesion/iniciosesion.html">
                     <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
                 </a>
@@ -236,12 +252,14 @@
                 </div>
             </div>
         </div>
-     <!-- Imagen de flecha interactiva para Ver Más -->
-    <section class="more-arrow">
-        <a href="../ver mas mlb/vermasmlb.html">
-            <img src="../assets/flecha.png" alt="Ver más" width="40">
-        </a>
-    </section>
+
+        <!-- Imagen de flecha interactiva para Ver Más -->
+        <section class="more-arrow">
+            <a href="../ver mas mlb/vermasmlb.html">
+                <img src="../assets/flecha.png" alt="Ver más" width="40">
+            </a>
+        </section>
+
         <!-- Sección de contacto -->
         <section class="contact">
             <h2>Contáctanos</h2>
@@ -261,7 +279,13 @@
             </div>
         </section>
     </main>
-    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <div class="whatsapp-btn" id="whatsapp-btn">
+        <a href="https://wa.me/542604010214" target="_blank">
+            <img src="../assets/wsppp.png" alt="WhatsApp" width="30">
+        </a>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

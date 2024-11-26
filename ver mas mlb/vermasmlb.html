@@ -5,6 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Gorras NBA</title>
     <link rel="stylesheet" href="vermamlb.css">
+    <style>
+        /* Estilos para WhatsApp flotante */
+ .whatsapp-button {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     background-color: #25d366;
+     border-radius: 50%;
+     padding: 15px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+     z-index: 1000;
+ }
+ 
+ .whatsapp-button img {
+     width: 40px;
+     height: auto;
+ }
+ 
+ /* Responsividad: Ajustar la barra de búsqueda en dispositivos pequeños */
+ @media (max-width: 768px) {
+     
+     /* Organización de los productos en 2 columnas */
+     .products {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 20px;
+         padding: 0 15px; /* Añadir espacio a los lados para no tocar el borde */
+     }
+ 
+     /* Mejorar la apariencia de cada producto */
+     .product {
+         text-align: center;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 8px;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     }
+ 
+     .product img {
+         width: 100%;
+         height: auto;
+         margin-bottom: 10px;
+     }
+ 
+     .product p {
+         font-size: 16px;
+         font-weight: bold;
+         margin: 0;
+         color: #333;
+     }
+ }
+ 
+ @media (max-width: 480px) {
+ 
+     /* Organización de los productos en 1 columna */
+     .products {
+         display: grid;
+         grid-template-columns: 1fr;
+         gap: 15px;
+         padding: 0 10px; /* Espacio lateral reducido */
+     }
+ 
+     /* Mejorar la apariencia de cada producto */
+     .product {
+         text-align: center;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 8px;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     }
+ 
+     .product img {
+         width: 100%;
+         height: auto;
+         margin-bottom: 10px;
+     }
+ 
+     .product p {
+         font-size: 14px;
+         font-weight: bold;
+         margin: 0;
+         color: #333;
+     }
+ }
+ 
+     </style>
 </head>
 <body>
     <header>
@@ -42,9 +128,6 @@
                 </form>
             </div>
             <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito" width="30">
-                </a>
                 <a href="../inicio de sesion/iniciosesion.html">
                     <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil" width="30">
                 </a>
@@ -120,71 +203,11 @@
             </div>
         </section>
     </main>
-
-    <script>
-        // Cargar productos de MLB desde localStorage
-        document.addEventListener("DOMContentLoaded", () => {
-            const mlbProducts = JSON.parse(localStorage.getItem("MLB")) || [];
-            const productContainer = document.getElementById("mlbProducts");
-
-            // Mostrar solo los productos estáticos
-            const staticProducts = document.querySelectorAll('.product.static');
-
-            // Crear productos dinámicos solo si hay elementos en el localStorage
-            if (mlbProducts.length > 0) {
-                mlbProducts.forEach(product => {
-                    const productElement = document.createElement("div");
-                    productElement.classList.add("product");
-                    productElement.setAttribute("data-team", product.team);
-                    productElement.setAttribute("data-type", product.type);
-                    productElement.setAttribute("data-price", product.price);
-                    productElement.innerHTML = `
-                        <img src="${product.imageUrl}" alt="${product.team}">
-                        <p>${product.type} ${product.team} <br>$${product.price}</p>
-                    `;
-                    productContainer.appendChild(productElement);
-                });
-            }
-
-            // Ocultar los productos dinámicos
-            const dynamicProducts = document.querySelectorAll('.product:not(.static)');
-            dynamicProducts.forEach(product => {
-                product.style.display = 'none';
-            });
-        });
-
-        // Funcionalidad de búsqueda
-        document.getElementById('search-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita el envío del formulario
-            const selectedTeam = document.getElementById('team').value;
-            const selectedType = document.getElementById('cap-type').value;
-            const selectedPrice = document.getElementById('price').value;
-
-            const products = document.querySelectorAll('.product.static'); // Solo productos estáticos
-
-            products.forEach(product => {
-                const team = product.getAttribute('data-team');
-                const type = product.getAttribute('data-type');
-                const price = parseInt(product.getAttribute('data-price'));
-
-                let isVisible = true;
-
-                if (selectedTeam && team !== selectedTeam) {
-                    isVisible = false;
-                }
-                if (selectedType && type !== selectedType) {
-                    isVisible = false;
-                }
-                if (selectedPrice === '55k-mas' && price <= 55000) {
-                    isVisible = false;
-                }
-                if (selectedPrice === '55k-menos' && price > 55000) {
-                    isVisible = false;
-                }
-
-                product.style.display = isVisible ? 'block' : 'none'; // Muestra u oculta el producto
-            });
-        });
-    </script>
+<!-- Botón flotante de WhatsApp -->
+<div class="whatsapp-button">
+    <a href="https://wa.me/542604010214" target="_blank">
+        <img src="../assets/wsppp.png" alt="WhatsApp">
+    </a>
+</div>
 </body>
 </html>

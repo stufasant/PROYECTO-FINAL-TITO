@@ -10,6 +10,7 @@ body {
     background-color: white;
 }
 
+/* Header */
 header {
     display: flex;
     flex-direction: column;
@@ -148,7 +149,6 @@ main {
     margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
-
 /* Estilos para la sección de contacto */
 .contact {
     background-color: black;
@@ -181,4 +181,76 @@ main {
 
 .contact-icons a:hover img {
     transform: scale(1.1);
+}
+
+/* Media Queries for Responsive Design */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo img {
+        height: 120px;
+        width: 120px;
+    }
+
+
+
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .add-product, .new-products {
+        width: 100%;
+        max-width: none;
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .add-product h2, .new-products h2 {
+        font-size: 1.2em;
+    }
+
+    .add-product input, .add-product button {
+        font-size: 0.9em;
+    }
+
+    .new-products div.product {
+        font-size: 0.8em; /* Reducido el tamaño de fuente para móviles */
+    }
+
+    .new-products img {
+        max-width: 40px; /* Reducción del tamaño de imagen para pantallas pequeñas */
+    }
+
+    .contact h2 {
+        font-size: 20px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    .contact-icons img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .add-product, .new-products {
+        width: 80%;
+    }
+
+    .add-product input, .add-product button {
+        font-size: 1em;
+    }
+
+    .new-products img {
+        max-width: 45px; /* Ajuste de imagen para tablets */
+    }
 }

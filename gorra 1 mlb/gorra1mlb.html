@@ -180,6 +180,24 @@
         .contact-icons a {
             margin-right: 15px;
         }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -191,11 +209,8 @@
                 </a>
             </div>
 
-
+            <!-- Eliminado ícono de carrito -->
             <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
-                </a>
                 <a href="../inicio de sesion/iniciosesion.html">
                     <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
                 </a>
@@ -257,7 +272,11 @@
             </div>
         </section>
     </main>
-    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/542604010214" target="_blank" class="whatsapp-float">
+        <img src="../assets/wsppp.png" alt="WhatsApp">
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

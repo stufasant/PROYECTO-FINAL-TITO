@@ -9,12 +9,15 @@
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         /* Estructura principal usando grid */
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 20px;
             max-width: 1200px;
             margin: 20px auto;
@@ -24,7 +27,7 @@
         /* Flecha de regreso */
         .back-arrow {
             display: block;
-            margin: 20px 0 40px 10px; /* Ajuste de margen superior e inferior */
+            margin: 20px 0 40px 10px;
             width: 30px;
             height: 30px;
             cursor: pointer;
@@ -180,6 +183,43 @@
         .contact-icons a {
             margin-right: 15px;
         }
+
+        /* Estilo responsive */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .carousel-img {
+                width: 100%;
+            }
+
+            .thumbnail-container img {
+                width: 60px;
+            }
+
+            .product-info h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* Botón de WhatsApp flotante */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
     </style>
 </head>
 <body>
@@ -192,9 +232,6 @@
             </div>
 
             <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
-                </a>
                 <a href="../inicio de sesion/iniciosesion.html">
                     <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
                 </a>
@@ -236,12 +273,13 @@
                 </div>
             </div>
         </div>
-           <!-- Imagen de flecha interactiva para Ver Más -->
-    <section class="more-arrow">
-        <a href="../VER MAS/ver mas.html">
-            <img src="../assets/flecha.png" alt="Ver más" width="40">
-        </a>
-    </section>
+        
+        <!-- Imagen de flecha interactiva para Ver Más -->
+        <section class="more-arrow">
+            <a href="../VER MAS/ver mas.html">
+                <img src="../assets/flecha.png" alt="Ver más" width="40">
+            </a>
+        </section>
 
         <!-- Sección de contacto -->
         <section class="contact">
@@ -262,7 +300,11 @@
             </div>
         </section>
     </main>
-    </main>
+
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/542604010214" class="whatsapp-btn" target="_blank">
+        <img src="../assets/wsppp.png" alt="WhatsApp" width="24">
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

@@ -9,6 +9,8 @@
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         /* Estructura principal usando grid */
@@ -180,6 +182,45 @@
         .contact-icons a {
             margin-right: 15px;
         }
+
+        /* Estilos para móviles */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+            }
+
+            .carousel {
+                width: 100%;
+            }
+
+            .product-info {
+                margin-top: 20px;
+            }
+
+            .quantity-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Estilo del botón flotante de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
     </style>
 </head>
 <body>
@@ -191,9 +232,6 @@
                 </a>
             </div>
             <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
-                </a>
                 <a href="../inicio de sesion/iniciosesion.html">
                     <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
                 </a>
@@ -235,12 +273,13 @@
                 </div>
             </div>
         </div>
-       <!-- Imagen de flecha interactiva para Ver Más -->
-    <section class="more-arrow">
-        <a href="../ver mas mlb/vermasmlb.html">
-            <img src="../assets/flecha.png" alt="Ver más" width="40">
-        </a>
-    </section>  
+        <!-- Imagen de flecha interactiva para Ver Más -->
+        <section class="more-arrow">
+            <a href="../ver mas mlb/vermasmlb.html">
+                <img src="../assets/flecha.png" alt="Ver más" width="40">
+            </a>
+        </section>
+
         <!-- Sección de contacto -->
         <section class="contact">
             <h2>Contáctanos</h2>
@@ -260,55 +299,13 @@
             </div>
         </section>
     </main>
-    </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let currentIndex = 0;
-            const images = document.querySelectorAll('.carousel-img');
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            const totalImages = images.length;
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/542604010214" target="_blank">
+        <div class="whatsapp-button">
+            <img src="../assets/wsppp.png" alt="WhatsApp" width="30">
+        </div>
+    </a>
 
-            thumbnails.forEach((thumbnail, index) => {
-                thumbnail.addEventListener('click', () => {
-                    images[currentIndex].classList.remove('active');
-                    currentIndex = index;
-                    images[currentIndex].classList.add('active');
-                });
-            });
-
-            document.getElementById('increase-quantity').addEventListener('click', function () {
-                let quantity = document.getElementById('quantity');
-                quantity.value = parseInt(quantity.value) + 1;
-            });
-
-            document.getElementById('decrease-quantity').addEventListener('click', function () {
-                let quantity = document.getElementById('quantity');
-                if (quantity.value > 1) {
-                    quantity.value = parseInt(quantity.value) - 1;
-                }
-            });
-
-            // Redirige a WhatsApp con un mensaje personalizado al hacer clic en "Comprar ahora"
-            document.getElementById('buy-now-btn').addEventListener('click', function () {
-                const talle = document.getElementById('talla').value;
-                const quantity = document.getElementById('quantity').value;
-                const productName = "Gorra 9fifty LA dodgers";
-                const price = "$49.999";
-
-                // Crear mensaje personalizado
-                const message = `Hola Tec caps! Quiero realizar un pedido:
-- Producto: ${productName}
-- Talle: ${talle}
-- Cantidad: ${quantity}
-- Precio unitario: ${price}`;
-
-                // Redirige a WhatsApp con el mensaje
-                const phoneNumber = "542604010214";
-                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                window.open(url, "_blank");
-            });
-        });
-    </script>
 </body>
 </html>

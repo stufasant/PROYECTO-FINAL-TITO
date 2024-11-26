@@ -6,199 +6,254 @@
     <title>Página de Gorras NBA</title>
     <link rel="stylesheet" href="gorra5nba.css">
     <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-        }
+       /* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+}
 
-        /* Estructura principal usando grid */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 10px;
-        }
+/* Estructura principal usando grid */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
 
-        /* Flecha de regreso */
-        .back-arrow {
-            display: block;
-            margin: 20px 0 40px 10px; /* Ajuste de margen superior e inferior */
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+/* Flecha de regreso */
+.back-arrow {
+    display: block;
+    margin: 20px 0 40px 10px; /* Ajuste de margen superior e inferior */
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 
-        .back-arrow:hover {
-            transform: scale(1.1);
-        }
+.back-arrow:hover {
+    transform: scale(1.1);
+}
 
-        /* Carrusel a la izquierda */
-        .carousel {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* Carrusel a la izquierda */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .carousel-img {
-            width: 100%;
-            height: auto;
-            display: none;
-            border: 2px solid rgb(228, 210, 210);
-        }
+.carousel-img {
+    width: 100%;
+    height: auto;
+    display: none;
+    border: 2px solid rgb(228, 210, 210);
+}
 
-        .carousel-img.active {
-            display: block;
-        }
+.carousel-img.active {
+    display: block;
+}
 
-        .thumbnail-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 
-        .thumbnail-container img {
-            width: 50px;
-            height: auto;
-            margin: 0 5px;
-            cursor: pointer;
-        }
+.thumbnail-container img {
+    width: 50px;
+    height: auto;
+    margin: 0 5px;
+    cursor: pointer;
+}
 
-        /* Información del producto a la derecha */
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+/* Información del producto a la derecha */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .product-info h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #000000;
-        }
+.product-info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #000000;
+}
 
-        .product-info p {
-            font-size: 22px;
-            color: #e20000;
-            font-weight: bold;
-        }
+.product-info p {
+    font-size: 22px;
+    color: #e20000;
+    font-weight: bold;
+}
 
-        .availability {
-            font-size: 14px;
-            margin: 5px 0;
-            color: #000000;
-        }
+.availability {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #000000;
+}
 
-        .talle-info {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: #000000;
-        }
+.talle-info {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #000000;
+}
 
-        /* Botones de acción */
-        .product-actions {
-            margin-top: 20px;
-        }
+/* Botones de acción */
+.product-actions {
+    margin-top: 20px;
+}
 
-        .product-actions label {
-            font-size: 16px;
-            margin-right: 10px;
-        }
+.product-actions label {
+    font-size: 16px;
+    margin-right: 10px;
+}
 
-        .product-actions select {
-            padding: 5px;
-        }
+.product-actions select {
+    padding: 5px;
+}
 
-        .product-actions button {
-            padding: 12px 20px;
-            margin: 10px 0;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
+.product-actions button {
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
 
-        .product-actions button:hover {
-            background-color: #555;
-        }
+.product-actions button:hover {
+    background-color: #555;
+}
 
-        /* Estilos para el input de cantidad */
-        .quantity-container {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
+/* Estilos para el input de cantidad */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
 
-        .quantity-container button {
-            width: 30px;
-            height: 30px;
-            font-size: 16px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+.quantity-container button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
-        .quantity-container input {
-            width: 50px;
-            text-align: center;
-            padding: 5px;
-            margin: 0 5px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-        }
+.quantity-container input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
 
-        /* Estilos para la sección de contacto */
-        .contact {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #000000;
-            border-radius: 5px;
-        }
+/* Estilos para la sección de contacto */
+.contact {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 5px;
+}
 
-        .contact h2 {
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
+.contact h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
 
-        .contact-info p {
-            margin: 5px 0;
-            color: #ffffff;
-        }
+.contact-info p {
+    margin: 5px 0;
+    color: #ffffff;
+}
 
-        .contact-icons {
-            margin-top: 10px;
-        }
+.contact-icons {
+    margin-top: 10px;
+}
 
-        .contact-icons a {
-            margin-right: 15px;
-        }
+.contact-icons a {
+    margin-right: 15px;
+}
+
+/* Botón de WhatsApp flotante */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 12px;
+    }
+
+    .product-info h2 {
+        font-size: 24px;
+    }
+
+    .product-info p {
+        font-size: 18px;
+    }
+
+    .product-actions button {
+        padding: 10px 15px;
+    }
+
+    .quantity-container input {
+        width: 40px;
+    }
+
+    .thumbnail-container img {
+        width: 40px;
+    }
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="../HTML/index.html">
-                    <img src="../assets/LOGO EMPRESA.png" alt="Logo Gorra">
-                </a>
-            </div>
-            <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
-                </a>
-                <a href="../inicio de sesion/iniciosesion.html">
-                    <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
-                </a>
-            </div>
-        </nav>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="../HTML/index.html">
+                        <img src="../assets/LOGO EMPRESA.png" alt="Logo Gorra">
+                    </a>
+                </div>
+    
+    
+                <div class="cart-profile">
+                    <a href="../inicio de sesion/iniciosesion.html">
+                        <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
+                    </a>
+                </div>
+            </nav>
     </header>
 
     <main>
@@ -235,12 +290,13 @@
                 </div>
             </div>
         </div>
-         <!-- Imagen de flecha interactiva para Ver Más -->
-    <section class="more-arrow">
-        <a href="../VER MAS/ver mas.html">
-            <img src="../assets/flecha.png" alt="Ver más" width="40">
-        </a>
-    </section>
+
+        <!-- Imagen de flecha interactiva para Ver Más -->
+        <section class="more-arrow">
+            <a href="../VER MAS/ver mas.html">
+                <img src="../assets/flecha.png" alt="Ver más" width="40">
+            </a>
+        </section>
 
         <!-- Sección de contacto -->
         <section class="contact">
@@ -261,7 +317,13 @@
             </div>
         </section>
     </main>
-    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <div class="whatsapp-btn">
+        <a href="https://wa.me/542604010214" target="_blank">
+            <img src="../assets/wsppp.png" alt="WhatsApp">
+        </a>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

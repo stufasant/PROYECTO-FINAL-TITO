@@ -15,16 +15,12 @@
                 </a>
             </div>
             <div class="cart-profile">
-                <a href="../error404.html">
-                    <img src="../assets/CARRITO 2.0.png" alt="Carrito">
-                </a>
                 <a href="../inicio de sesion/iniciosesion.html">
                     <img src="../assets/FOTO DE PERFIL 2.0.png" alt="Perfil">
                 </a>
             </div>
         </nav>
     </header>
-
     <main>
         <!-- Formulario para agregar productos -->
         <section class="add-product">
@@ -35,30 +31,42 @@
                     <option value="NBA">NBA</option>
                     <option value="MLB">MLB</option>
                 </select>
-
                 <label for="team">Equipo:</label>
                 <input type="text" id="team" required>
-
                 <label for="type">Tipo:</label>
                 <input type="text" id="type" required>
-
                 <label for="price">Precio:</label>
                 <input type="number" id="price" required>
-
                 <label for="imageUrl">URL de la imagen:</label>
                 <input type="text" id="imageUrl" required>
-
                 <button type="button" onclick="addProduct()">Agregar Producto</button>
             </form>
         </section>
-
         <!-- Sección para mostrar productos nuevos -->
         <section class="new-products">
             <h2>Nuevos Productos</h2>
             <div id="newProductsList"></div>
         </section>
     </main>
-
+           <!-- Sección de contacto -->
+        <section class="contact">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> sturfeighengorras@gmail.com</p>
+                <p><strong>Dirección:</strong> Simonovich 3350</p>
+                <p><strong>Horario:</strong> Lunes a Sábado 10:00 a 21:00 hs</p>
+                <p><strong>Teléfono:</strong> +54 260 401 0214</p>
+            </div>
+            <div class="contact-icons">
+                <a href="https://wa.me/542604010214" target="_blank">
+                    <img src="../assets/wsp.png" alt="WhatsApp" width="40">
+                </a>
+                <a href="https://www.instagram.com/santiagosturr/?next=%2Fstuufaa%2F" target="_blank">
+                    <img src="../assets/instagram.png" alt="Instagram" width="40">
+                </a>
+            </div>
+        </section>
+    </main>
     <script>
         // Función para agregar producto
         function addProduct() {
@@ -67,46 +75,37 @@
             const type = document.getElementById("type").value;
             const price = document.getElementById("price").value;
             const imageUrl = document.getElementById("imageUrl").value;
-
             // Crear el producto en formato objeto
             const product = { team, type, price, imageUrl };
-
             // Guardar en Local Storage según la liga
             let products = JSON.parse(localStorage.getItem(league)) || [];
             products.push(product);
             localStorage.setItem(league, JSON.stringify(products));
-
             // Limpiar el formulario después de agregar el producto
             document.getElementById("addProductForm").reset();
             alert("Producto agregado correctamente a la tienda.");
-
             // Mostrar el nuevo producto en la sección correspondiente
             displayNewProduct(product);
         }
-
         // Función para mostrar productos nuevos
         function displayNewProduct(product) {
             const newProductsList = document.getElementById("newProductsList");
             const productElement = document.createElement("div");
             productElement.classList.add("product");
-
             productElement.innerHTML = `
                 <img src="${product.imageUrl}" alt="${product.team}">
                 <p><strong>Equipo:</strong> ${product.team}</p>
                 <p><strong>Tipo:</strong> ${product.type}</p>
                 <p><strong>Precio:</strong> $${product.price}</p>
             `;
-
             newProductsList.appendChild(productElement);
         }
-
         // Cargar productos al iniciar la página
         function loadProducts() {
             const league = document.getElementById("league").value; // Obtener la liga seleccionada
             let products = JSON.parse(localStorage.getItem(league)) || [];
             products.forEach(displayNewProduct);
         }
-
         // Llamar a la función al cargar la página
         window.onload = loadProducts;
     </script>
